@@ -15,7 +15,7 @@ class Chat extends React.Component {
            <GiftedChat
            messages={this.state.messages}
            onSend={(message) => {
-            Backend.sendMessage(message);
+           Backend.sendMessage(message);
            }}
            user={{
                _id: Backend.getUid(),

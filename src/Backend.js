@@ -8,10 +8,9 @@ class Backend {
         firebase.initializeApp({
             apiKey: 'AIzaSyAiuvZgc9iLMezprc5zYLBw9PsrgRkXjrE',
             authDomain: 'meetupchat-dbce1.firebaseapp.com',
-            databaseURL: 'https://meetupchat-dbcel.firebaseio.com',
+            databaseURL: 'https://meetupchat-dbce1.firebaseio.com',
             storageBucket: 'meetupchat-dbce1.appspot.com',
         });
-    }
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             this.setUid(user.uid);
@@ -60,7 +59,8 @@ sendMessage(message) {
 closeChat() {
     if (this.messagesRef) {
         this.messagesRef.off();
-    }
+  }
+ }
 }
 
-export default Backend();
+export default new Backend();
