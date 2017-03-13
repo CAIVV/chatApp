@@ -10,7 +10,7 @@ class Chat extends React.Component {
         return (
             <View>
                 <Text>
-                    where is the home????
+                    Hello {this.props.name}
                 </Text>
             </View>
         );

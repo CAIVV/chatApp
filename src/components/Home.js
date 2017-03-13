@@ -8,7 +8,14 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
+import {
+    Actions,
+} from 'react-native-router-flux';
+
 class Home extends React.Component {
+    state = {
+        name: '',
+    };
     render() {
         return (
             <View>
@@ -18,10 +25,18 @@ class Home extends React.Component {
                 <TextInput
                     style={styles.nameInput}
                     placeholder='John Snow'
+                    onChangeText={(text) => {
+                        this.setState({
+                            name: text,
+                        });
+                    }}
+                    value={this.state.name}
                 />
                 <TouchableOpacity
                 onPress={() => {
-                    // переход на вторую страницу
+                    Actions.chat({
+                        name:this.state.name,
+                    });
                 }}>
                     <Text style={styles.buttonText}>
                         Next
