@@ -5,6 +5,7 @@ import {
     Text,
     StyleSheet,
     TextInput,
+    TouchableOpacity,
 } from 'react-native';
 
 class Home extends React.Component {
@@ -18,6 +19,14 @@ class Home extends React.Component {
                     style={styles.nameInput}
                     placeholder='John Snow'
                 />
+                <TouchableOpacity
+                onPress={() => {
+                    // переход на вторую страницу
+                }}>
+                    <Text style={styles.buttonText}>
+                        Next
+                    </Text>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -35,7 +44,11 @@ var styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: 'black',
         margin: 20,
+    },
+    buttonText: {
+        marginLeft: 20,
+        fontSize: 20,
     }
-})
+});
 
 export default Home;
